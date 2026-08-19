@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5f2ec">
+<title>AT THE CODE — Family & Young Minds</title>
+<meta name="description" content="Family learning, creativity, behaviour and practical life skills — designed with children and parents in mind.">
+
+<style>
+:root {
+  --paper:#f5f2ec;
+  --ink:#15202b;
+  --muted:#66727c;
+  --line:#d9d5ce;
+  --white:#fffdf9;
+  --blue:#183a61;
+  --cyan:#3f91a8;
+  --sage:#6f8b79;
+  --gold:#b7934e;
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height:1.6;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.shell{width:min(1180px,calc(100% - 32px));margin:auto}
+
+header{
+  position:sticky; top:0; z-index:20;
+  background:rgba(245,242,236,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(21,32,43,.08);
+}
+.nav{
+  min-height:76px;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.brandmark{
+  width:44px;height:44px;border:1px solid var(--line);border-radius:12px;
+  display:grid;place-items:center;background:var(--white);overflow:hidden
+}
+.brandmark img{width:36px;height:36px;object-fit:contain}
+.brandmark span{font-weight:800}
+.brandtext strong{display:block;font-size:.88rem;letter-spacing:.14em}
+.brandtext span{font-size:.76rem;color:var(--muted)}
+.navlinks{display:flex;align-items:center;gap:20px;font-size:.9rem;color:#33404a}
+.navlinks a:hover{color:var(--blue)}
+.navcta{
+  padding:10px 14px;border:1px solid var(--ink);border-radius:999px;font-weight:700
+}
+
+.hero{padding:70px 0 34px}
+.heroGrid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:end}
+.kicker{
+  font-size:.78rem;text-transform:uppercase;letter-spacing:.16em;
+  color:var(--blue);font-weight:800;margin-bottom:16px
+}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:500}
+h1{
+  margin:0;font-size:clamp(3.2rem,7vw,6.4rem);line-height:.94;letter-spacing:-.045em;
+  max-width:760px
+}
+.heroCopy p{
+  max-width:720px;font-size:1.1rem;color:#4f5a63;margin:24px 0 0
+}
+.heroActions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 18px;border-radius:999px;border:1px solid var(--ink);
+  font-weight:700;font-size:.94rem
+}
+.btn.primary{background:var(--ink);color:white}
+.btn.secondary{background:transparent}
+
+.heroPanel{
+  min-height:460px;border-radius:30px;background:var(--white);border:1px solid var(--line);
+  padding:28px;position:relative;overflow:hidden
+}
+.heroPanel::before{
+  content:"";position:absolute;width:270px;height:270px;border-radius:50%;
+  background:#dce9ec;right:-55px;top:-55px
+}
+.heroPanel::after{
+  content:"";position:absolute;width:180px;height:180px;border-radius:50%;
+  border:1px solid #c9d6da;right:34px;top:34px
+}
+.panelQuote{
+  position:absolute;left:28px;bottom:30px;max-width:320px
+}
+.panelQuote .big{
+  font-family:Georgia,"Times New Roman",serif;font-size:2rem;line-height:1.08;
+  margin-bottom:14px
+}
+.panelQuote p{margin:0;color:var(--muted)}
+.miniCard{
+  position:absolute;right:28px;bottom:28px;width:170px;padding:16px;border-radius:16px;
+  background:#183a61;color:white
+}
+.miniCard small{display:block;opacity:.65;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+
+.strip{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  margin:36px 0 0
+}
+.stripInner{
+  display:grid;grid-template-columns:repeat(4,1fr)
+}
+.stripItem{padding:18px 20px;border-right:1px solid var(--line)}
+.stripItem:last-child{border-right:0}
+.stripItem b{display:block;font-size:.88rem}
+.stripItem span{font-size:.78rem;color:var(--muted)}
+
+.section{padding:86px 0}
+.sectionHead{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;margin-bottom:38px}
+.sectionHead h2{margin:0;font-size:clamp(2.4rem,5vw,4.5rem);line-height:1}
+.sectionHead p{margin:0;color:var(--muted);font-size:1.04rem;max-width:700px}
+
+.storyGrid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}
+.storyCard{
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:34px
+}
+.storyCard.feature{padding:46px}
+.storyCard h3{margin:0 0 14px;font-size:1.75rem}
+.storyCard p{margin:0;color:#55616b}
+.storyCard + .storyCard{}
+.quoteLine{
+  font-family:Georgia,"Times New Roman",serif;font-size:1.6rem;line-height:1.3;
+  color:var(--blue);margin-top:26px
+}
+
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{
+  min-height:330px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px;display:flex;flex-direction:column;justify-content:space-between
+}
+.project .num{font-size:.76rem;color:var(--muted);letter-spacing:.12em}
+.project h3{font-size:2rem;margin:24px 0 12px}
+.project p{margin:0;color:#5c6670}
+.project footer{font-size:.86rem;color:var(--blue);font-weight:700}
+
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.principle{
+  padding:24px;border-top:1px solid var(--line);display:grid;grid-template-columns:52px 1fr;gap:16px
+}
+.principle strong{font-size:1.05rem}
+.principle p{margin:4px 0 0;color:var(--muted)}
+.dot{
+  width:38px;height:38px;border-radius:50%;background:#e4ecee;border:1px solid #ccd8db
+}
+
+.road{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.roadCard{
+  border-radius:20px;padding:28px;background:#172431;color:white;min-height:260px
+}
+.roadCard:nth-child(2){background:#244d5b}
+.roadCard:nth-child(3){background:#596b60}
+.roadCard small{text-transform:uppercase;letter-spacing:.14em;opacity:.65}
+.roadCard h3{font-size:2rem;margin:20px 0 12px}
+.roadCard p{margin:0;opacity:.82}
+
+.publicWindow{
+  margin-top:18px;border-radius:26px;background:#dfe7e1;padding:42px;
+  display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center
+}
+.publicWindow h3{font-size:2.4rem;margin:0 0 12px}
+.publicWindow p{margin:0;color:#4c5d53}
+.publicWindow .seal{
+  justify-self:end;width:180px;height:180px;border-radius:50%;border:1px solid #9daf9f;
+  display:grid;place-items:center;text-align:center;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase
+}
+
+footer.siteFooter{padding:36px 0 56px;border-top:1px solid var(--line)}
+.footerGrid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start}
+.footerGrid p{margin:6px 0 0;color:var(--muted);font-size:.9rem}
+.footerLinks{display:flex;gap:16px;flex-wrap:wrap;color:#3f4a53;font-size:.9rem}
+
+@media(max-width:900px){
+  .heroGrid,.sectionHead,.storyGrid,.publicWindow{grid-template-columns:1fr}
+  .cards3,.road{grid-template-columns:1fr}
+  .principles{grid-template-columns:1fr}
+  .stripInner{grid-template-columns:1fr 1fr}
+  .stripItem:nth-child(2){border-right:0}
+  .navlinks a:not(.navcta){display:none}
+  .publicWindow .seal{justify-self:start}
+}
+@media(max-width:600px){
+  .shell{width:min(100% - 22px,1180px)}
+  .hero{padding-top:42px}
+  .heroPanel{min-height:390px}
+  .miniCard{right:18px;bottom:18px;width:145px}
+  .panelQuote{left:20px;bottom:22px;max-width:230px}
+  .panelQuote .big{font-size:1.6rem}
+  .stripInner{grid-template-columns:1fr}
+  .stripItem{border-right:0;border-bottom:1px solid var(--line)}
+  .stripItem:last-child{border-bottom:0}
+  .section{padding:62px 0}
+  .storyCard.feature,.storyCard{padding:26px}
+  .footerGrid{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="shell nav">
+    <a class="brand" href="#top">
+      <div class="brandmark"><span>AT</span></div>
+      <div class="brandtext">
+        <strong>AT THE CODE</strong>
+        <span>Family &amp; Young Minds</span>
+      </div>
+    </a>
+    <nav class="navlinks">
+      <a href="#story">Our story</a>
+      <a href="#work">What we're building</a>
+      <a href="#principles">Our principles</a>
+      <a href="#journey">The journey</a>
+      <a class="navcta" href="#window">Follow the vision</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="shell heroGrid">
+    <div class="heroCopy">
+      <div class="kicker">Family learning, built differently</div>
+      <h1>Helping children grow through learning, play and everyday life.</h1>
+      <p>
+        AT THE CODE – Family &amp; Young Minds is creating thoughtful digital experiences
+        that help children learn, build confidence, develop positive behaviour and enjoy
+        meaningful activities with the people who care for them.
+      </p>
+      <div class="heroActions">
+        <a class="btn primary" href="#work">Explore the work</a>
+        <a class="btn secondary" href="#story">Read our story</a>
+      </div>
+    </div>
+    <div class="heroPanel">
+      <div class="panelQuote">
+        <div class="big">“Technology should help families feel more capable — not more overwhelmed.”</div>
+        <p>Our approach is simple: useful first, safe by design, enjoyable enough to come back to.</p>
+      </div>
+      <div class="miniCard">
+        <small>In development</small>
+        Learning, behaviour, creativity and family connection — brought into one growing experience.
+      </div>
+    </div>
+  </div>
+
+  <div class="shell strip">
+    <div class="stripInner">
+      <div class="stripItem"><b>Learning</b><span>Maths, reading, science and more</span></div>
+      <div class="stripItem"><b>Behaviour</b><span>Communication, choices and confidence</span></div>
+      <div class="stripItem"><b>Life skills</b><span>Routines, cooking and practical learning</span></div>
+      <div class="stripItem"><b>Family time</b><span>Shared activities worth doing together</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="shell">
+    <div class="sectionHead">
+      <h2>It started with a real family need.</h2>
+      <p>
+        The idea grew from lived experience: difficult periods, pressure at home, lockdown,
+        and the challenge of finding safe, useful and genuinely engaging things for children to do.
+        Rather than accept that gap, we started imagining what a better experience could look like.
+      </p>
+    </div>
+    <div class="storyGrid">
+      <article class="storyCard feature">
+        <h3>More than screen time.</h3>
+        <p>
+          Children need more than something to keep them occupied. They need experiences that
+          help them understand the world, practise positive choices, build practical skills and
+          feel proud of what they can do. Parents and carers also need tools that feel supportive,
+          not complicated.
+        </p>
+        <div class="quoteLine">That is the space AT THE CODE – Family &amp; Young Minds is being built to fill.</div>
+      </article>
+      <article class="storyCard">
+        <h3>Technology with a human purpose.</h3>
+        <p>
+          We use technology where it genuinely improves the experience: personalising learning,
+          making activities interactive and helping children stay engaged. The technology is not
+          the headline. The child, the family and the outcome are.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="shell">
+    <div class="sectionHead">
+      <h2>What we’re building.</h2>
+      <p>
+        One connected family-focused venture, with each part designed to solve a different everyday need.
+        The public sees the direction; the deeper roadmap stays private while we build.
+      </p>
+    </div>
+
+    <div class="cards3">
+      <article class="project">
+        <div>
+          <div class="num">01 / LEARNING</div>
+          <h3>Orish</h3>
+          <p>
+            A child-safe learning guide that can explain, encourage and turn lessons into playful challenges.
+            Orish is being designed around academic learning, behaviour, emotional understanding and life skills.
+          </p>
+        </div>
+        <footer>Learn through play, not pressure.</footer>
+      </article>
+
+      <article class="project">
+        <div>
+          <div class="num">02 / PRACTICAL LIFE</div>
+          <h3>Butter Cakes &amp; Bakes</h3>
+          <p>
+            Family cooking and practical learning through measuring, following steps, taking turns and making
+            something together. Everyday activities become opportunities to build confidence and independence.
+          </p>
+        </div>
+        <footer>Real skills, shared at home.</footer>
+      </article>
+
+      <article class="project">
+        <div>
+          <div class="num">03 / FAMILY EXPERIENCE</div>
+          <h3>Family Cinema</h3>
+          <p>
+            A future digital experience with clearly separated spaces for children, families and adults.
+            The children’s side is designed around appropriate content, learning and safe creative experiences.
+          </p>
+        </div>
+        <footer>Clear boundaries. Better experiences.</footer>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="principles">
+  <div class="shell">
+    <div class="sectionHead">
+      <h2>What matters to us.</h2>
+      <p>
+        We do not want to make “another AI platform.” We are building a family product with clear values,
+        and technology sits quietly underneath the experience where it is useful.
+      </p>
+    </div>
+
+    <div class="principles">
+      <div class="principle"><div class="dot"></div><div><strong>Children come before features.</strong><p>Safety, age-appropriateness and healthy boundaries shape the product from the beginning.</p></div></div>
+      <div class="principle"><div class="dot"></div><div><strong>Learning should feel alive.</strong><p>Games, stories, practical activities and curiosity make learning easier to return to.</p></div></div>
+      <div class="principle"><div class="dot"></div><div><strong>Behaviour is learned in context.</strong><p>Communication, patience, honesty and respect are built naturally into situations and choices.</p></div></div>
+      <div class="principle"><div class="dot"></div><div><strong>Parents remain in control.</strong><p>Adults should understand what children are using and have clear control over access and settings.</p></div></div>
+      <div class="principle"><div class="dot"></div><div><strong>Technology should support people.</strong><p>We use it to make learning more useful and accessible, not to replace human relationships.</p></div></div>
+      <div class="principle"><div class="dot"></div><div><strong>Build carefully, then grow.</strong><p>Start with strong experiences, learn from real families and expand only where it adds real value.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="journey">
+  <div class="shell">
+    <div class="sectionHead">
+      <h2>The road ahead.</h2>
+      <p>
+        The goal is not to release everything at once. It is to build a strong first experience, prove what works
+        and expand responsibly from there.
+      </p>
+    </div>
+    <div class="road">
+      <article class="roadCard">
+        <small>Now</small>
+        <h3>Build the core.</h3>
+        <p>Bring Orish to life, create the first polished learning games, establish parent controls and test the experience.</p>
+      </article>
+      <article class="roadCard">
+        <small>Next</small>
+        <h3>Learn from families.</h3>
+        <p>Use real feedback to improve the learning, behaviour and family-activity experience before wider growth.</p>
+      </article>
+      <article class="roadCard">
+        <small>Later</small>
+        <h3>Grow the world.</h3>
+        <p>Add new learning experiences and connected family spaces without losing the principles that made the first version work.</p>
+      </article>
+    </div>
+
+    <div class="publicWindow" id="window">
+      <div>
+        <h3>A public window, not the full blueprint.</h3>
+        <p>
+          This site shares the purpose, direction and values behind AT THE CODE – Family &amp; Young Minds.
+          Families, supporters, collaborators and funders can understand what we are building without us publishing
+          every idea before it is ready.
+        </p>
+      </div>
+      <div class="seal">Building<br>what comes<br>next</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="siteFooter">
+  <div class="shell footerGrid">
+    <div>
+      <strong>AT THE CODE — Family &amp; Young Minds</strong>
+      <p>Learning · behaviour · life skills · family connection</p>
+    </div>
+    <div class="footerLinks">
+      <a href="#story">Our story</a>
+      <a href="#work">The work</a>
+      <a href="#principles">Principles</a>
+      <a href="#journey">Journey</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

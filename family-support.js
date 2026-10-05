@@ -1,0 +1,1 @@
+document.getElementById('helpForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formMsg').textContent='Your form is ready, but secure submission storage is not connected on this preview yet. We will not collect sensitive family information until the secure intake route is enabled.';});

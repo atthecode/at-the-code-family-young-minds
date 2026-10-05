@@ -5,7 +5,9 @@ const parts = [
   "part-01.b64",
   "part-02.b64",
   "part-03.b64",
-  "part-04.b64"
+  "part-04.b64",
+  "part-05.b64",
+  "part-06.b64"
 ];
 
 let base64 = "";

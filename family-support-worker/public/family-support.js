@@ -1,0 +1,1 @@
+document.getElementById('helpForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formMsg').textContent='Secure support-request storage is not connected yet, so no personal information has been sent. The form will be enabled once the protected intake route is ready.';});
